@@ -1,0 +1,47 @@
+﻿@model ASP.MVC5.Models.Employee
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Employee")) 
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        @Html.LabelFor(m => m.firstName)
+        <div class="col-m-10">
+            @Html.TextBoxFor(m => m.firstName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.firstName,"",new {@class="text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.lastName)
+        <div class="col-m-10">
+            @Html.TextBoxFor(m => m.lastName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.lastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.age)
+        <div class="col-m-10">
+            @Html.TextBoxFor(m => m.age, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.age, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.firstName)
+        <div class="col-m-10">
+            @Html.TextBoxFor(m => m.gender, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.gender, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-outline-primary" />
+    </div>
+
+</div>
+
+}
